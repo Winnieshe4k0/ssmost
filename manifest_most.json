@@ -1,0 +1,19 @@
+{
+  "name": "Живописный мост · SUP",
+  "short_name": "Мост",
+  "description": "Менеджер проката сапбордов — Живописный мост",
+  "start_url": "/ssmanager-most/",
+  "scope": "/ssmanager-most/",
+  "display": "standalone",
+  "background_color": "#d41c1e",
+  "theme_color": "#d41c1e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
