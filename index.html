@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#d41c1e" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="База SUP" />
-  <link rel="manifest" href="manifest.json" />
-  <title>База · Свой Сап</title>
+  <meta name="apple-mobile-web-app-title" content="Мост SUP" />
+  <link rel="manifest" href="manifest_most.json" />
+  <title>Живописный мост · SUP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -84,19 +84,6 @@
     .btn-icon:active { background: rgba(255,255,255,0.3); }
 
     /* ─── BONUS BADGE in header ─── */
-    .bonus-badge {
-      display: none;
-      background: rgba(255,255,255,0.22);
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--white);
-      margin-top: 3px;
-      width: fit-content;
-    }
-    .bonus-badge.visible { display: block; }
 
     /* ─── NAV TABS ─── */
     .nav-tabs { display: flex; background: var(--white); border-bottom: 1.5px solid var(--gray-100); position: sticky; top: 68px; z-index: 99; }
@@ -163,131 +150,6 @@
     .stat-card-sub { font-size: 12px; color: var(--gray-400); margin-top: 4px; }
 
     /* ─── PROGRESS BAR ─── */
-    .progress-wrap {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: var(--shadow-card);
-    }
-    .progress-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 10px;
-    }
-    .progress-title {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gray-600);
-    }
-    .progress-label {
-      font-family: var(--font-display); font-size: 15px;
-      letter-spacing: 0.5px;
-    }
-    .progress-label.done { color: var(--green); }
-    .progress-label.going { color: var(--red); }
-    .progress-track {
-      width: 100%; height: 12px; background: var(--gray-100);
-      border-radius: 100px; overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%; border-radius: 100px;
-      background: var(--red);
-      transition: width .6s cubic-bezier(0.34, 1.2, 0.64, 1);
-      min-width: 0%;
-    }
-    .progress-fill.done { background: var(--green); }
-    .progress-footer {
-      display: flex; justify-content: space-between;
-      margin-top: 8px; font-size: 11px; color: var(--gray-400); font-weight: 600;
-    }
-    .progress-deadline {
-      font-size: 12px; color: var(--gray-400); margin-top: 6px; text-align: center;
-    }
-    .bonus-unlocked-banner {
-      display: none;
-      background: #e8f7ee; border: 1.5px solid #1a9e4a;
-      border-radius: var(--radius-sm); padding: 12px 14px;
-      margin-top: 10px;
-      font-size: 13px; font-weight: 600; color: var(--green);
-      text-align: center; line-height: 1.4;
-    }
-    .bonus-unlocked-banner.visible { display: block; }
-
-
-    /* ─── STAFF LIST ─────────────────────────────────────────────────── */
-    .staff-section { margin-bottom: 12px; }
-    .staff-section-header {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 8px;
-    }
-    .staff-section-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gray-600);
-    }
-    .staff-total {
-      font-size: 13px; font-weight: 700; color: var(--black);
-    }
-    .staff-rows { display: flex; flex-direction: column; gap: 8px; }
-    .staff-row {
-      display: flex; gap: 8px; align-items: center;
-    }
-    .staff-row input[type="text"] {
-      flex: 1.2; padding: 11px 12px;
-      border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm);
-      font-family: var(--font-body); font-size: 15px; font-weight: 500;
-      background: var(--white); color: var(--black); outline: none;
-      transition: border-color .2s; -webkit-appearance: none;
-    }
-    .staff-row input[type="number"] {
-      flex: 1; padding: 11px 12px;
-      border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm);
-      font-family: var(--font-body); font-size: 15px; font-weight: 600;
-      background: var(--white); color: var(--black); outline: none;
-      transition: border-color .2s; -webkit-appearance: none;
-      min-width: 0;
-    }
-    .staff-row input:focus { border-color: var(--red); }
-    .btn-remove-staff {
-      width: 36px; height: 36px; flex-shrink: 0;
-      background: none; border: 1.5px solid var(--gray-200);
-      border-radius: 50%; color: var(--gray-400);
-      font-size: 18px; cursor: pointer; display: flex;
-      align-items: center; justify-content: center;
-      transition: all .15s; -webkit-appearance: none;
-    }
-    .btn-remove-staff:active { background: var(--gray-100); color: var(--red); border-color: var(--red); }
-    .btn-add-staff {
-      width: 100%; padding: 10px; margin-top: 4px;
-      background: none; border: 1.5px dashed var(--gray-300);
-      border-radius: var(--radius-sm); color: var(--gray-400);
-      font-family: var(--font-body); font-size: 13px; font-weight: 700;
-      letter-spacing: 1px; cursor: pointer; transition: all .15s;
-      -webkit-appearance: none;
-    }
-    .btn-add-staff:active { border-color: var(--red); color: var(--red); background: rgba(212,28,30,0.04); }
-
-    /* ─── PERIOD TABS ────────────────────────────────────────────────── */
-    .period-tabs {
-      display: flex; gap: 6px; margin-bottom: 16px; overflow-x: auto;
-      padding-bottom: 2px; scrollbar-width: none;
-    }
-    .period-tabs::-webkit-scrollbar { display: none; }
-    .period-tab {
-      flex-shrink: 0; padding: 8px 14px;
-      background: var(--white); border: 1.5px solid var(--gray-200);
-      border-radius: 100px; font-family: var(--font-body);
-      font-size: 12px; font-weight: 700; color: var(--gray-400);
-      cursor: pointer; transition: all .2s; white-space: nowrap;
-    }
-    .period-tab.active {
-      background: var(--red); border-color: var(--red); color: var(--white);
-    }
-
-    /* staff detail in day card */
-    .staff-detail {
-      font-size: 11px; color: var(--gray-400); margin-top: 3px;
-      line-height: 1.5;
-    }
-
     /* ─── MODAL ─── */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 200;
@@ -649,9 +511,8 @@
   </g></g>
       </svg>
       <div>
-        <div class="header-title">БАЗА</div>
-        <div class="header-sub">Свой Сап</div>
-        <div class="bonus-badge" id="header-bonus-badge">🏆 БОНУС 15%</div>
+        <div class="header-title">МОСТ</div>
+        <div class="header-sub">Живописный мост</div>
       </div>
     </div>
     <button class="btn-icon" id="btn-logout" title="Выход">
@@ -689,24 +550,6 @@
       <div class="period-tab" data-period="sep">Сентябрь</div>
     </div>
 
-    <!-- Progress bar -->
-    <div class="progress-wrap" id="progress-wrap">
-      <div class="progress-header">
-        <div class="progress-title">До повышения %</div>
-        <div class="progress-label going" id="progress-label">0 / 500 000 ₽</div>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
-      </div>
-      <div class="progress-footer">
-        <span>0 ₽</span>
-        <span>500 000 ₽</span>
-      </div>
-      <div class="progress-deadline" id="progress-deadline"></div>
-      <div class="bonus-unlocked-banner" id="bonus-banner">
-        🏆 Бонус достигнут! Комиссия повышена до <strong>15%</strong> по всем дням.
-      </div>
-    </div>
 
     <div class="stats-grid" id="stats-grid">
       <div class="loader" style="grid-column:1/-1"><div class="spinner"></div></div>
@@ -781,12 +624,12 @@
   // ─────────────────────────────────────────────────────────────────────
 
   const APP_PASSWORD  = "1506";
-  const SESSION_KEY   = "sup_auth";
-  const BONUS_TARGET  = 500_000;
-  const BONUS_RATE    = 0.15;
-  const BASE_RATE     = 0.10;
+  const SESSION_KEY   = "sup_auth_most";
+  // Нет бонусной механики — единая ставка 15%
+
+  const COMMISSION_RATE = 0.15;
   // Бонусный дедлайн: 1 июля текущего года
-  const bonusDeadline = () => new Date(new Date().getFullYear(), 6, 1); // July 1
+
 
   const fbApp = initializeApp(firebaseConfig);
   const db    = getDatabase(fbApp);
@@ -809,20 +652,13 @@
     return monthName(month) + ' ' + year;
   };
 
-  // Для прогресс-бара: считаем прибыль мая+июня вместе
-  function getBonusPeriodEntries(entries) {
-    const year = new Date().getFullYear();
-    return entries.filter(e => {
-      const d = new Date(e.date + 'T00:00:00');
-      const y = d.getFullYear(), m = d.getMonth();
-      return y === year && (m === 4 || m === 5);
-    });
-  }
 
-  // Ставка комиссии с учётом бонуса
-  let bonusUnlocked = false;
-  function rate() { return bonusUnlocked ? BONUS_RATE : BASE_RATE; }
-  function commissionAmt(prof) { return Math.round(prof * rate()); }
+
+  // Единая ставка 15% — без бонусов
+  function commissionForEntry(e) {
+    return Math.round(profitAmt(e.revenue, e.staff) * COMMISSION_RATE);
+  }
+  function commissionAmt(prof) { return Math.round(prof * COMMISSION_RATE); }
   function profitAmt(rev, exp) { return rev - exp; }
 
   function showToast(msg, ms = 2200) {
@@ -844,6 +680,7 @@
     $('auth-screen').style.display = 'none';
     $('app').style.display = 'flex';
     $('app').style.flexDirection = 'column';
+    initPeriodTabs();
     loadAll();
   }
   function showLogin() {
@@ -883,34 +720,19 @@
   let entries = [];
 
   function loadAll() {
-    const entriesRef = query(ref(db, 'entries'), orderByChild('date'));
+    const entriesRef = query(ref(db, 'entries_most'), orderByChild('date'));
     onValue(entriesRef, snap => {
       const raw = snap.val() || {};
       entries = Object.entries(raw)
         .map(([id, data]) => ({ id, ...data }))
         .sort((a, b) => b.date.localeCompare(a.date));
-      checkBonus();
       renderHome();
       renderStats();
     });
   }
 
-  // ── BONUS LOGIC ───────────────────────────────────────────────────────
-  function checkBonus() {
-    const bonusEntries = getBonusPeriodEntries(entries);
-    const totalProfit  = bonusEntries.reduce((s, e) => s + profitAmt(e.revenue, e.staff), 0);
-    const now          = new Date();
-    const deadline     = bonusDeadline();
-    // Бонус: достигли 500к ДО 1 июля (или уже после — если достигли раньше)
-    // Мы проверяем факт достижения, независимо от текущей даты
-    bonusUnlocked = totalProfit >= BONUS_TARGET;
-
-    // Обновить бейдж в шапке
-    const badge = $('header-bonus-badge');
-    bonusUnlocked ? badge.classList.add('visible') : badge.classList.remove('visible');
-
-    // Обновить лейбл в форме
-    $('calc-rate-label').textContent = bonusUnlocked ? 'Моя комиссия (15%)' : 'Моя комиссия (10%)';
+  function updateCalcLabel() {
+    $('calc-rate-label').textContent = 'Моя комиссия (15%)';
   }
 
   // ── RENDER HOME ───────────────────────────────────────────────────────
@@ -936,7 +758,7 @@
   function dayCardHTML(e) {
     const d    = new Date(e.date + 'T00:00:00');
     const prof = profitAmt(e.revenue, e.staff);
-    const comm = commissionAmt(prof);
+    const comm = commissionForEntry(e);
     const staffBreakdown = e.staffList && e.staffList.length
       ? e.staffList.filter(s => s.name || s.amount).map(s => `${s.name||'—'}: ${fmtRub(s.amount)}`).join(' · ')
       : '';
@@ -969,12 +791,18 @@
   // ── RENDER STATS ──────────────────────────────────────────────────────
   let activePeriod = 'mayjun'; // default
 
-  // Init period tabs
+  // Init period tabs — вызывается один раз при входе
   function initPeriodTabs() {
-    // Set default: activate tab matching current month
     const cm = new Date().getMonth();
     const map = { 4:'mayjun', 5:'mayjun', 6:'jul', 7:'aug', 8:'sep' };
     activePeriod = map[cm] || 'mayjun';
+
+    document.querySelectorAll('.period-tab').forEach(t => {
+      // Убираем старые обработчики клонированием
+      const fresh = t.cloneNode(true);
+      t.parentNode.replaceChild(fresh, t);
+    });
+
     document.querySelectorAll('.period-tab').forEach(t => {
       t.classList.toggle('active', t.dataset.period === activePeriod);
       t.addEventListener('click', () => {
@@ -982,6 +810,7 @@
         document.querySelectorAll('.period-tab').forEach(x => x.classList.remove('active'));
         t.classList.add('active');
         renderStats();
+        updateCalcLabel();
       });
     });
   }
@@ -1002,40 +831,16 @@
       return d.getFullYear() === cy && months.includes(d.getMonth());
     });
 
-    // ── Progress bar (май+июнь) ────────────────────────────────────────
-    const bonusEntries   = getBonusPeriodEntries(entries);
-    const totalBonProfit = bonusEntries.reduce((s, e) => s + profitAmt(e.revenue, e.staff), 0);
-    const pct            = Math.min(100, (totalBonProfit / BONUS_TARGET) * 100);
-    const fill           = $('progress-fill');
-    const label          = $('progress-label');
-    const banner         = $('bonus-banner');
-    const now            = new Date();
-    const deadline       = bonusDeadline();
-    const daysLeft       = Math.max(0, Math.ceil((deadline - now) / 86400000));
-    requestAnimationFrame(() => { fill.style.width = pct + '%'; });
-    if (bonusUnlocked) {
-      fill.classList.add('done');
-      label.classList.remove('going'); label.classList.add('done');
-      label.textContent = '✓ Цель достигнута!';
-      banner.classList.add('visible');
-      $('progress-deadline').textContent = '';
-    } else {
-      fill.classList.remove('done');
-      label.classList.add('going');
-      label.textContent = totalBonProfit.toLocaleString('ru-RU') + ' / 500 000 ₽';
-      banner.classList.remove('visible');
-      $('progress-deadline').textContent = daysLeft > 0
-        ? `До 1 июля осталось ${daysLeft} дн.`
-        : 'Срок достижения бонуса истёк';
-    }
+
 
     // ── Сводная статистика ─────────────────────────────────────────────
     const totalRev    = me.reduce((s, e) => s + (e.revenue || 0), 0);
     const totalGuests = me.reduce((s, e) => s + (e.guests  || 0), 0);
     const totalProfit = me.reduce((s, e) => s + profitAmt(e.revenue, e.staff), 0);
-    const totalComm   = me.reduce((s, e) => s + commissionAmt(profitAmt(e.revenue, e.staff)), 0);
+    const totalComm   = me.reduce((s, e) => s + commissionForEntry(e), 0);
     const avgRev      = me.length ? Math.round(totalRev / me.length) : 0;
-    const rateLabel   = bonusUnlocked ? '15%' : '10%';
+    const rateLabel   = '15%';
+    updateCalcLabel();
 
     $('stats-grid').innerHTML = `
       <div class="stat-card full">
@@ -1065,7 +870,7 @@
       </div>`;
 
     const dl = $('stats-days-list');
-    if (!me.length) { dl.innerHTML = \`<div class="empty-state"><p>Нет записей за этот период</p></div>\`; return; }
+    if (!me.length) { dl.innerHTML = `<div class="empty-state"><p>Нет записей за этот период</p></div>`; return; }
     dl.innerHTML = [...me].sort((a,b) => b.date.localeCompare(a.date)).map(e => dayCardHTML(e)).join('');
     bindCards(dl);
   }
@@ -1115,7 +920,7 @@
     if (del) del.addEventListener('click', deleteEntry);
   }
 
-  function openModal()  { $('modal-overlay').classList.add('open');    document.body.style.overflow = 'hidden'; }
+  function openModal()  { updateCalcLabel(); $('modal-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeModal() { $('modal-overlay').classList.remove('open'); document.body.style.overflow = ''; }
 
   $('modal-overlay').addEventListener('click', e => { if (e.target === $('modal-overlay')) closeModal(); });
@@ -1170,7 +975,7 @@
     if (!dateVal || isNaN(rev) || isNaN(guests)) { showToast('Заполните все поля'); return; }
     try {
       const key = editId || dateVal;
-      await set(ref(db, 'entries/' + key), {
+      await set(ref(db, 'entries_most/' + key), {
         date: dateVal, revenue: rev, guests, staff, staffList, createdAt: Date.now()
       });
       closeModal();
@@ -1182,7 +987,7 @@
     if (!editId) return;
     if (!confirm('Удалить запись?')) return;
     try {
-      await remove(ref(db, 'entries/' + editId));
+      await remove(ref(db, 'entries_most/' + editId));
       closeModal();
       showToast('Запись удалена');
     } catch(err) { showToast('Ошибка удаления'); }
