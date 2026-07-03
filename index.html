@@ -654,11 +654,12 @@
 
 
 
-  // Единая ставка 15% — без бонусов
+  // Единая ставка 15% — без бонусов, округление вверх до 100
+  function ceilTo100(n) { return Math.ceil(n / 100) * 100; }
   function commissionForEntry(e) {
-    return Math.round(profitAmt(e.revenue, e.staff) * COMMISSION_RATE);
+    return ceilTo100(profitAmt(e.revenue, e.staff) * COMMISSION_RATE);
   }
-  function commissionAmt(prof) { return Math.round(prof * COMMISSION_RATE); }
+  function commissionAmt(prof) { return ceilTo100(prof * COMMISSION_RATE); }
   function profitAmt(rev, exp) { return rev - exp; }
 
   function showToast(msg, ms = 2200) {
