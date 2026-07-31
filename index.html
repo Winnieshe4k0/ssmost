@@ -625,7 +625,7 @@
 
   const APP_PASSWORD  = "1506";
   const SESSION_KEY   = "sup_auth_most";
-  // Нет бонусной механики — единая ставка 15%
+  // Нет бонусной механики — единая ставка 5%
 
   const COMMISSION_RATE = 0.05;
   // Бонусный дедлайн: 1 июля текущего года
@@ -654,7 +654,7 @@
 
 
 
-  // Единая ставка 15% — без бонусов, округление вверх до 100
+  // Единая ставка 5% — без бонусов, округление вверх до 100
   function ceilTo100(n) { return Math.ceil(n / 100) * 100; }
   function commissionForEntry(e) {
     return ceilTo100(profitAmt(e.revenue, e.staff) * COMMISSION_RATE);
@@ -840,7 +840,7 @@
     const totalProfit = me.reduce((s, e) => s + profitAmt(e.revenue, e.staff), 0);
     const totalComm   = me.reduce((s, e) => s + commissionForEntry(e), 0);
     const avgRev      = me.length ? Math.round(totalRev / me.length) : 0;
-    const rateLabel   = '15%';
+    const rateLabel   = '5%';
     updateCalcLabel();
 
     $('stats-grid').innerHTML = `
